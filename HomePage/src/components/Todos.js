@@ -1,0 +1,26 @@
+import React, { Component } from 'react';
+import TodoItem from './TodoItem';
+
+class Todos extends Component {
+  render() {
+    //console.log(this.props);
+    let todoItems;
+    if(this.props.todos){
+      todoItems = this.props.todos.map(todo => {
+        //console.log(project);
+        return (
+          // Goes to todoItem.js
+          <TodoItem key={todo.title} todo={todo} />
+        );
+      });
+    }
+    return (
+      <div className="Todos">
+        <h3>Todo List</h3>
+        {todoItems}
+      </div>
+    );
+  }
+}
+
+export default Todos;
